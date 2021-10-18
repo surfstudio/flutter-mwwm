@@ -11,7 +11,7 @@ This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) t
 
 ![MWWM Cover](https://i.ibb.co/9qBTf3S/Bunner-LOGO.png)
 
-## About
+## Description
 
 MVVM-inspired lightweight architectural framework for Flutter apps made with respect to Clean Architecture.
 
@@ -67,7 +67,7 @@ Unlike other components, the `Model` is optional.
 
 Presented by the `Model`, `Change`, and `Performer` classes.
 
-## Usage
+## Example
 
 ### Basic use case (without Model)
 

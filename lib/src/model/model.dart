@@ -25,9 +25,9 @@ import 'package:mwwm/src/model/performer/performer.dart';
 ///
 /// Model consists of [Change] and [Performer].
 class Model {
-  const Model(this._performers);
-
   final List<Performer> _performers;
+
+  const Model(this._performers);
 
   /// Perform some change inside business logic once
   R perform<R>(Change<R> change) {

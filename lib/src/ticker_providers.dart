@@ -6,8 +6,7 @@ import 'package:mwwm/src/widget_model.dart';
 /// Single ticker provider for [WidgetModel]
 /// based on [SingleTickerProviderStateMixin]
 /// https://api.flutter.dev/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
-mixin SingleTickerProviderWidgetModelMixin on WidgetModel
-    implements TickerProvider {
+mixin SingleTickerProviderWidgetModelMixin on WidgetModel implements TickerProvider {
   Ticker? _ticker;
 
   @override
@@ -30,8 +29,7 @@ mixin SingleTickerProviderWidgetModelMixin on WidgetModel
         ],
       );
     }());
-    _ticker =
-        Ticker(onTick, debugLabel: kDebugMode ? 'created by $this' : null);
+    _ticker = Ticker(onTick, debugLabel: kDebugMode ? 'created by $this' : null);
     return _ticker!;
   }
 
@@ -117,6 +115,8 @@ mixin TickerProviderWidgetModelMixin on WidgetModel implements TickerProvider {
 // confusing. Instead we use the less precise but more anodyne "_WidgetTicker",
 // which attracts less attention.
 class _WidgetTicker extends Ticker {
+  final TickerProviderWidgetModelMixin _creator;
+
   _WidgetTicker(
     TickerCallback onTick,
     this._creator, {
@@ -125,8 +125,6 @@ class _WidgetTicker extends Ticker {
           onTick,
           debugLabel: debugLabel,
         );
-
-  final TickerProviderWidgetModelMixin _creator;
 
   @override
   void dispose() {
