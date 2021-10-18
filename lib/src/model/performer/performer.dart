@@ -24,7 +24,8 @@ import 'package:mwwm/mwwm.dart';
 abstract class Performer<R, C extends Change<R>> {
   const Performer();
 
-  factory Performer.from(FunctionalPerformer<R, C> _performerFunc) => _Performer(_performerFunc);
+  factory Performer.from(FunctionalPerformer<R, C> _performerFunc) =>
+      _Performer(_performerFunc);
 
   /// Main method to perform a Change
   ///
@@ -58,13 +59,15 @@ class _Performer<R, C extends Change<R>> extends Performer<R, C> {
 
 /// Alias for performers which result is a Future with data
 /// This operations do only once
-abstract class FuturePerformer<R, C extends FutureChange<R>> extends Performer<Future<R>, C> {
+abstract class FuturePerformer<R, C extends FutureChange<R>>
+    extends Performer<Future<R>, C> {
   const FuturePerformer();
 }
 
 /// Alias for performers that return Stream of data
 /// Recommended for observabling data
-abstract class StreamPerformer<R, C extends StreamChange<R>> extends Performer<Stream<R>, C> {
+abstract class StreamPerformer<R, C extends StreamChange<R>>
+    extends Performer<Stream<R>, C> {
   const StreamPerformer();
 }
 
@@ -72,7 +75,8 @@ abstract class StreamPerformer<R, C extends StreamChange<R>> extends Performer<S
 /// results of [perform].
 /// R - type of result
 /// C - type of change on which performer triggers
-abstract class Broadcast<R, C extends FutureChange<R>> extends FuturePerformer<R, C> {
+abstract class Broadcast<R, C extends FutureChange<R>>
+    extends FuturePerformer<R, C> {
   final _controller = StreamController<R>.broadcast();
 
   /// Stream of results of [perform].

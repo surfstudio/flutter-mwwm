@@ -15,7 +15,8 @@ class TestWidget extends CoreMwwmWidget<WidgetModelMock> {
         );
 
   @override
-  WidgetState<CoreMwwmWidget<WidgetModelMock>, WidgetModelMock> createWidgetState() {
+  WidgetState<CoreMwwmWidget<WidgetModelMock>, WidgetModelMock>
+      createWidgetState() {
     return TestWidgetState();
   }
 }
@@ -33,7 +34,8 @@ void main() {
     late WidgetModelMock widgetModelMock;
     setUp(() {
       widgetModelMock = WidgetModelMock();
-      testWidget = TestWidget(key: UniqueKey(), widgetModelBuilder: (context) => widgetModelMock);
+      testWidget = TestWidget(
+          key: UniqueKey(), widgetModelBuilder: (context) => widgetModelMock);
     });
     testWidgets(
       'onLoad and onBind called on initState',

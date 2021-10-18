@@ -6,7 +6,8 @@ import 'package:mwwm/src/widget_model.dart';
 /// Single ticker provider for [WidgetModel]
 /// based on [SingleTickerProviderStateMixin]
 /// https://api.flutter.dev/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
-mixin SingleTickerProviderWidgetModelMixin on WidgetModel implements TickerProvider {
+mixin SingleTickerProviderWidgetModelMixin on WidgetModel
+    implements TickerProvider {
   Ticker? _ticker;
 
   @override
@@ -29,7 +30,8 @@ mixin SingleTickerProviderWidgetModelMixin on WidgetModel implements TickerProvi
         ],
       );
     }());
-    _ticker = Ticker(onTick, debugLabel: kDebugMode ? 'created by $this' : null);
+    _ticker =
+        Ticker(onTick, debugLabel: kDebugMode ? 'created by $this' : null);
     return _ticker!;
   }
 
