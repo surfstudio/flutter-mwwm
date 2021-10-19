@@ -47,9 +47,9 @@ abstract class Performer<R, C extends Change<R>> {
 typedef FunctionalPerformer<R, C> = R Function(C);
 
 class _Performer<R, C extends Change<R>> extends Performer<R, C> {
-  const _Performer(this._performerFunc);
-
   final FunctionalPerformer<R, C> _performerFunc;
+
+  const _Performer(this._performerFunc);
 
   @override
   R perform(C change) {

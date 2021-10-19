@@ -6,10 +6,10 @@ import 'package:mwwm/mwwm.dart';
 import 'mocks/widget_model_mock.dart';
 
 class TestWidget extends CoreMwwmWidget<WidgetModelMock> {
-  const TestWidget(
-      {required WidgetModelBuilder<WidgetModelMock> widgetModelBuilder,
-      Key? key})
-      : super(
+  const TestWidget({
+    required WidgetModelBuilder<WidgetModelMock> widgetModelBuilder,
+    Key? key,
+  }) : super(
           key: key,
           widgetModelBuilder: widgetModelBuilder,
         );

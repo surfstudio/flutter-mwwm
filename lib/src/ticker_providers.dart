@@ -117,6 +117,8 @@ mixin TickerProviderWidgetModelMixin on WidgetModel implements TickerProvider {
 // confusing. Instead we use the less precise but more anodyne "_WidgetTicker",
 // which attracts less attention.
 class _WidgetTicker extends Ticker {
+  final TickerProviderWidgetModelMixin _creator;
+
   _WidgetTicker(
     TickerCallback onTick,
     this._creator, {
@@ -125,8 +127,6 @@ class _WidgetTicker extends Ticker {
           onTick,
           debugLabel: debugLabel,
         );
-
-  final TickerProviderWidgetModelMixin _creator;
 
   @override
   void dispose() {

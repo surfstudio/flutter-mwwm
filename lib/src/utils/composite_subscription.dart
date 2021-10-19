@@ -29,13 +29,13 @@ import 'dart:async';
 /// // clear them all at once
 /// composite.clear();
 class CompositeSubscription {
-  bool _isDisposed = false;
-
   final _subscriptionsList = <StreamSubscription<Object?>>[];
 
   /// Checks if this composite is disposed. If it is, the composite can't be used again
   /// and will throw an error if you try to add more subscriptions to it.
   bool get isDisposed => _isDisposed;
+
+  bool _isDisposed = false;
 
   /// Adds new subscription to this composite.
   ///
